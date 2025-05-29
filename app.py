@@ -5,6 +5,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 import db
 import config
+import items
+
 app = Flask(__name__)
 app.secret_key = config.secret_key
 @app.route("/")
@@ -23,9 +25,7 @@ def create_game():
     Price = request.form["Price"]
     user_id = session["user_id"]
 
-    sql = "INSERT INTO items (Title, Descriptio, Price, user_id) VALUES (?, ?, ?, ?)"
-    db.execute(sql, [Title, Description, Price, user_id])
-
+    items.add_items(Title,Description,Price,user_id)
     return redirect("/")
 
 @app.route("/register")
