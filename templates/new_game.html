@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Uuden Pelin Lisäys</title>
+</head>
+
+<body>
+  <h1>Uuden Pelin lisäys</h1>
+
+  <form action="/create_game" method="post">
+    <p>
+      Nimi: <br />
+      <input type="text" name="Title" />
+    </p>
+    <p>
+      Kuvaus: <br />
+      <textarea name="Description" rows="8" cols="60"></textarea>
+    </p>
+    <p>
+      Hinta: <br />
+      <input type="text" name="Price" size= "5" />
+    </p>
+
+    <input type="submit" value="Julkaise Peli" />
+  </form>
+
+</body>
+
+</html>
